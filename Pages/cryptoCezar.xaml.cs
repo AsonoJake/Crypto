@@ -10,31 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Crypto
+namespace Crypto.Pages
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Logika interakcji dla klasy cryptoCezra.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class cryptoCezra : Window
     {
-        public MainWindow()
+        public cryptoCezra()
         {
             InitializeComponent();
         }
 
-        public void BtnClose_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            this.DragMove();
+
         }
-
-
     }
 }
