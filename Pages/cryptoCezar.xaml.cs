@@ -15,18 +15,23 @@ using System.Windows.Shapes;
 namespace Crypto.Pages
 {
     /// <summary>
-    /// Logika interakcji dla klasy cryptoCezra.xaml
+    /// Logika interakcji dla klasy cryptoCezar.xaml
     /// </summary>
-    public partial class cryptoCezra : Window
+    public partial class cryptoCezar : Window
     {
-        public cryptoCezra()
+        public cryptoCezar()
         {
             InitializeComponent();
         }
 
+        public void BtnClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            this.DragMove();
         }
     }
 }

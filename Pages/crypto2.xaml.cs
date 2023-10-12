@@ -23,5 +23,15 @@ namespace Crypto.Pages
         {
             InitializeComponent();
         }
+
+        public void BtnClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
     }
 }

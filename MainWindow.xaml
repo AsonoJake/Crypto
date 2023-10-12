@@ -15,8 +15,10 @@
                     <GradientStop Color="#FF7272FF" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
+            
         </Border>
-
+        <Button x:Name="BtnCezar" Cursor="Hand" Content="Szyfr Cezara" Margin="143,115,550,283" Click="BtnCezar_Click"/>
+        <Button x:Name="Btn2" Cursor="Hand" Content="Szyfr 2" Margin="550,115,143,283"/>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>

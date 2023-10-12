@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Crypto.Pages;
 
 namespace Crypto
 {
@@ -35,6 +36,10 @@ namespace Crypto
             this.DragMove();
         }
 
-
+        public void BtnCezar_Click(object sender, RoutedEventArgs e)
+        {
+            cryptoCezar cezar = new cryptoCezar();
+            cezar.Show();
+        }
     }
 }
