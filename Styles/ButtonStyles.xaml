@@ -4,6 +4,9 @@
     <ImageBrush x:Key="closeBlack" ImageSource="/Icons/closeBlack.png"/>
     <ImageBrush x:Key="closeRed" ImageSource="/Icons/closeRed.png"/>
     <ImageBrush x:Key="closeWhite" ImageSource="/Icons/closeWhite.png"/>
+    <ImageBrush x:Key="padlock" ImageSource="/Icons/padlock.png"/>
+    <ImageBrush x:Key="padlockBlack" ImageSource="/Icons/padlockBlack.png"/>
+    <ImageBrush x:Key="padlockRed" ImageSource="/Icons/padlockRed.png"/>
 
     <Style x:Key="ButtonCloseStyle" TargetType="{x:Type Button}">
         <Setter Property="Height" Value="20"/>
@@ -21,6 +24,29 @@
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
                             <Setter TargetName="border" Property="Background" Value="{StaticResource closeRed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonPadlockStyle" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="Width" Value="20"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+        <Setter Property="Margin" Value="0 0 0 15"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" BorderThickness="0" Background="{StaticResource padlock}"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource padlockBlack}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource padlockRed}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

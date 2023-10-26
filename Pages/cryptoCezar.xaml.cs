@@ -33,5 +33,7 @@ namespace Crypto.Pages
         {
             this.DragMove();
         }
+
+        
     }
 }

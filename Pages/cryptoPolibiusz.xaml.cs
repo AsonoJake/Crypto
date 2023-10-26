@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Crypto.Pages
 {
     /// <summary>
-    /// Logika interakcji dla klasy crypto2.xaml
+    /// Logika interakcji dla klasy cryptoPolibiusz.xaml
     /// </summary>
-    public partial class crypto2 : Window
+    public partial class cryptoPolibiusz : Window
     {
-        public crypto2()
+        public cryptoPolibiusz()
         {
             InitializeComponent();
         }

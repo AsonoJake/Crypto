@@ -41,5 +41,11 @@ namespace Crypto
             cryptoCezar cezar = new cryptoCezar();
             cezar.Show();
         }
+
+        public void BtnPolibiusz_Click(object sender, RoutedEventArgs e)
+        {
+            cryptoPolibiusz polibiusz = new cryptoPolibiusz();
+            polibiusz.Show();
+        }   
     }
 }

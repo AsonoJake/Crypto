@@ -11,6 +11,9 @@
     <None Remove="Icons\closeBlack.png" />
     <None Remove="Icons\closeRed.png" />
     <None Remove="Icons\closeWhite.png" />
+    <None Remove="Icons\padlock.png" />
+    <None Remove="Icons\padlockBlack.png" />
+    <None Remove="Icons\padlockRed.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,6 +24,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Icons\closeWhite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\padlock.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\padlockBlack.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\padlockRed.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

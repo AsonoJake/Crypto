@@ -28,5 +28,10 @@
                 <Button x:Name="BtnClose" Style="{StaticResource ButtonCloseStyle}" Cursor="Hand" Click="BtnClose_Click"/>
             </StackPanel>
         </Grid>
+        <TextBox x:Name="kod_jawny" TextWrapping="Wrap" Text="Wpisz kod jawny" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="80,99,80,252"/>
+
+        <Button x:Name="Btn_Encode" Style="{StaticResource ButtonPadlockStyle}" Cursor="Hand"/>
+        <ComboBox Margin="80,168,80,200"/>
+
     </Grid>
 </Window>
