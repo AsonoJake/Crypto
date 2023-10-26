@@ -34,6 +34,10 @@ namespace Crypto.Pages
             this.DragMove();
         }
 
-        
+        public void BtnEncode_Click(object sender, RoutedEventArgs e)
+        {
+            string text = kod_jawny.Text;
+            int key = Convert.ToInt32(klucz.Text);
+        }
     }
 }
