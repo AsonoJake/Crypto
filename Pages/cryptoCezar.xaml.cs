@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using static System.Net.Mime.MediaTypeNames;
+using static Crypto.Pages.Alfabet;
 
 namespace Crypto.Pages
 {
@@ -54,31 +55,39 @@ namespace Crypto.Pages
 
         string CezarekEn(string napis, int k)
         {
-            char[] chars = napis.ToCharArray();
+            Encoding encoding = Encoding.UTF8;
 
-            for (int i = 0; i < chars.Length; i++)
+            byte[] bity = new byte[encoding.GetByteCount(napis)];
+            bity = encoding.GetBytes(napis);
+
+            int index = 0;
+            int written = encoding.GetBytes(napis, 0, napis.Length, bity, index);
+            index = written;
+            
+
+            string wyjscie = "";
+            for (int ctr = 0; ctr <= index - 1; ctr++)
             {
-                if (chars[i] == ' ')
-                    continue;
+                wyjscie += String.Format("{0:X2} ", bity[ctr]);
 
-                chars[i] += (char)k;
-
-                if (chars[i] > 'Z')
-                    chars[i] -= (char)34;
+            }
+            char[] tabelka = new char[wyjscie.Length];
+            
+            foreach (char codedBit in wyjscie)
+            {
+                tabelka.Append(codedBit);      
             }
 
-            string wynik = new string(chars);
-            return wynik.Replace(" ", "");
-        }
 
-        static bool IsPolishCharacter(char c)
-        {
-            return (c >= 'ą' && c <= 'ż') || (c >= 'Ą' && c <= 'Ż');
-        }
+            ///Nie działa.....
+            string wyjscieEn = ""; 
 
-        static bool IsUpperCasePolishCharacter(char c)
-        {
-            return (c >= 'Ą' && c <= 'Ż');
+            foreach (char zTabl in tabelka)
+            {
+                wyjscieEn += zTabl.ToString();
+            }
+
+            return wyjscieEn;
         }
     }
 }
