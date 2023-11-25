@@ -41,53 +41,68 @@ namespace Crypto.Pages
 
         private void BtnEncode_Click(object sender, RoutedEventArgs e)
         {
-            string tekst = kod_jawny.Text.ToLower();
+            string tekst = kod_jawny.Text.ToLower().Replace(".", "").Replace(",", "").Replace("!", "").Replace("?", "");
             int key = Convert.ToInt32(klucz.Text);
-            wynikKodu = CezarekEn(tekst, key);
+            wynikKodu = CezarekEn(tekst, key) + " - " + key.ToString();
             popUp popup = new popUp();
             popup.ShowDialog();
         }
 
         private void BtnDecode_Click(object sender, RoutedEventArgs e)
         {
-
+            string tekst = kod_jawny.Text.ToLower();
+            int key = Convert.ToInt32(klucz.Text);
+            wynikKodu = CezarekDe(tekst, key);
+            popUp popup = new popUp();
+            popup.ShowDialog();
         }
 
         string CezarekEn(string napis, int k)
         {
-            Encoding encoding = Encoding.UTF8;
+            string alphabet = "aąbcćdeęfghijklłmnńoóprsśtuwyz"; // Zmieniony alfabet
+            string encrypted = "";
 
-            byte[] bity = new byte[encoding.GetByteCount(napis)];
-            bity = encoding.GetBytes(napis);
-
-            int index = 0;
-            int written = encoding.GetBytes(napis, 0, napis.Length, bity, index);
-            index = written;
-            
-
-            string wyjscie = "";
-            for (int ctr = 0; ctr <= index - 1; ctr++)
+            foreach (char c in napis)
             {
-                wyjscie += String.Format("{0:X2} ", bity[ctr]);
-
+                if (char.IsLetter(c))
+                {
+                    int index = alphabet.IndexOf(c);
+                    if (index != -1)
+                    {
+                        int shiftedIndex = (index + k) % alphabet.Length;
+                        encrypted += alphabet[shiftedIndex];
+                    }
+                }
+                else
+                {
+                    encrypted += c;
+                }
             }
-            char[] tabelka = new char[wyjscie.Length];
-            
-            foreach (char codedBit in wyjscie)
+            return encrypted;
+        }
+
+        string CezarekDe(string  napis, int k)
+        {
+            string alphabet = "aąbcćdeęfghijklłmnńoóprsśtuwyz";
+            string decrypted = "";
+
+            foreach (char c in napis)
             {
-                tabelka.Append(codedBit);      
+                if (char.IsLetter(c))
+                {
+                    int index = alphabet.IndexOf(c);
+                    if (index != -1)
+                    {
+                        int shiftedIndex = (index - k + alphabet.Length) % alphabet.Length;
+                        decrypted += alphabet[shiftedIndex];
+                    }
+                }
+                else
+                {
+                    decrypted += c;
+                }
             }
-
-
-            ///Nie działa.....
-            string wyjscieEn = ""; 
-
-            foreach (char zTabl in tabelka)
-            {
-                wyjscieEn += zTabl.ToString();
-            }
-
-            return wyjscieEn;
+            return decrypted;
         }
     }
 }
