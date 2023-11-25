@@ -59,7 +59,7 @@ namespace Crypto.Pages
 
         string CezarekEn(string napis, int k)
         {
-            string alphabet = "aąbcćdeęfghijklłmnńoóprsśtuwyz"; // Zmieniony alfabet
+            string alphabet = "aąbcćdeęfghijklłmnńoópqrsśtuvwyzźż";
             string encrypted = "";
 
             foreach (char c in napis)
@@ -83,7 +83,7 @@ namespace Crypto.Pages
 
         string CezarekDe(string  napis, int k)
         {
-            string alphabet = "aąbcćdeęfghijklłmnńoóprsśtuwyz";
+            string alphabet = "aąbcćdeęfghijklłmnńoópqrsśtuvwyzźż";
             string decrypted = "";
 
             foreach (char c in napis)

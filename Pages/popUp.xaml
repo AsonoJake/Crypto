@@ -32,6 +32,7 @@
                 <Button x:Name="BtnClose" Style="{StaticResource ButtonCloseStyle}" Cursor="Hand" Click="BtnClose_Click"/>
             </StackPanel>
         </Grid>
-        <TextBox x:Name="wynikPopUp" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="174,128,174,128" IsReadOnly="True"/>
+        <TextBox x:Name="wynikPopUp" TextWrapping="Wrap" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+         ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="174,128,174,86" IsReadOnly="True"/>
     </Grid>
 </Window>
