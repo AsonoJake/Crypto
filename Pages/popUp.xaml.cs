@@ -19,10 +19,18 @@ namespace Crypto.Pages
     /// </summary>
     public partial class popUp : Window
     {
-        public popUp()
+        public popUp(string rodzaj)
         {
             InitializeComponent();
-            wynikPopUp.Text = cryptoCezar.wynikKodu;
+            switch(rodzaj)
+            {
+                case "Cezar":
+                    wynikPopUp.Text = cryptoCezar.wynikKodu;
+                    break;
+                case "Polibiusz":
+                    wynikPopUp.Text = cryptoPolibiusz.wynikKodu;
+                    break;
+            }
         }
 
         public void BtnClose_Click(object sender, RoutedEventArgs e)

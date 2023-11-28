@@ -17,7 +17,7 @@
             </Border.Background>
             <Label Margin="59,30,59,200" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Top">
                 <Label.Content>
-                    <AccessText TextWrapping="Wrap" Text="Kodowanie udane. Zamknij, by kontynuwować..."/>
+                    <AccessText TextWrapping="Wrap" Text="Operacja udana. Zamknij, by kontynuwować..."/>
                 </Label.Content>
             </Label>
         </Border>

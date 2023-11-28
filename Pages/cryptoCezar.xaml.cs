@@ -13,7 +13,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using static System.Net.Mime.MediaTypeNames;
-using static Crypto.Pages.Alfabet;
 
 namespace Crypto.Pages
 {
@@ -44,7 +43,7 @@ namespace Crypto.Pages
             string tekst = kod_jawny.Text.ToLower().Replace(".", "").Replace(",", "").Replace("!", "").Replace("?", "");
             int key = Convert.ToInt32(klucz.Text);
             wynikKodu = CezarekEn(tekst, key) + " - " + key.ToString();
-            popUp popup = new popUp();
+            popUp popup = new popUp("Cezar");
             popup.ShowDialog();
         }
 
@@ -53,7 +52,7 @@ namespace Crypto.Pages
             string tekst = kod_jawny.Text.ToLower();
             int key = Convert.ToInt32(klucz.Text);
             wynikKodu = CezarekDe(tekst, key);
-            popUp popup = new popUp();
+            popUp popup = new popUp("Cezar");
             popup.ShowDialog();
         }
 
