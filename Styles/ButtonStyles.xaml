@@ -10,6 +10,9 @@
     <ImageBrush x:Key="padunlock" ImageSource="/Icons/padunlock.png"/>
     <ImageBrush x:Key="padunlockBlack" ImageSource="/Icons/padunlockBlack.png"/>
     <ImageBrush x:Key="padunlockRed" ImageSource="/Icons/padunlockRed.png"/>
+    <ImageBrush x:Key="saveWhite" ImageSource="/Icons/saveWhite.png"/>
+    <ImageBrush x:Key="saveBlack" ImageSource="/Icons/saveBlack.png"/>
+    <ImageBrush x:Key="saveRed" ImageSource="/Icons/saveRed.png"/>
 
     <Style x:Key="ButtonCloseStyle" TargetType="{x:Type Button}">
         <Setter Property="Height" Value="20"/>
@@ -73,6 +76,26 @@
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
                             <Setter TargetName="border" Property="Background" Value="{StaticResource padunlockRed}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonSaveStyle" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="28"/>
+        <Setter Property="Width" Value="28"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" BorderThickness="0" Background="{StaticResource saveWhite}"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource saveBlack}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource saveRed}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
