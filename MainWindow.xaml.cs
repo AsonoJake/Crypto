@@ -47,5 +47,11 @@ namespace Crypto
             cryptoPolibiusz polibiusz = new cryptoPolibiusz();
             polibiusz.Show();
         }   
+
+        public void BtnHomofon_Click(object sender, RoutedEventArgs e)
+        {
+            cryptoHomofon homofon = new cryptoHomofon();
+            homofon.Show();
+        }
     }
 }

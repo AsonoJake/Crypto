@@ -19,6 +19,7 @@
         </Border>
         <Button x:Name="BtnCezar" Cursor="Hand" Content="Szyfr Cezara" Margin="143,115,550,283" Click="BtnCezar_Click"/>
         <Button x:Name="BtnPolibiusz" Cursor="Hand" Content="Szyfr Polibiusza" Margin="550,115,143,283" Click="BtnPolibiusz_Click"/>
+        <Button x:Name="BtnHomofon" Cursor="Hand" Content="Sz. Homofoniczny" Margin="143,283,550,115" Click="BtnHomofon_Click"/>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>

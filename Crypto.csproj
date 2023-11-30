@@ -17,6 +17,9 @@
     <None Remove="Icons\padunlock.png" />
     <None Remove="Icons\padunlockBlack.png" />
     <None Remove="Icons\padunlockRed.png" />
+    <None Remove="Icons\plusBlack.png" />
+    <None Remove="Icons\plusGreen.png" />
+    <None Remove="Icons\plusWhite.png" />
     <None Remove="Icons\saveBlack.png" />
     <None Remove="Icons\saveRed.png" />
     <None Remove="Icons\saveWhite.png" />
@@ -48,6 +51,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Icons\padunlockRed.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\plusBlack.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\plusGreen.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\plusWhite.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Icons\saveBlack.png">

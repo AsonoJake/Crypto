@@ -15,7 +15,7 @@
                     <GradientStop Color="#FF7272FF" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
-            <Label Content="Szyfr Homofoniczny" Margin="59,30,59,315" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Content="Szyfr Homofoniczny" Margin="45,30,45,315" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         </Border>
 
         <Grid>
@@ -32,5 +32,6 @@
  ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="80,99,80,228"/>
         <Button x:Name="Btn_Encode" Style="{StaticResource ButtonPadlockStyle}" Cursor="Hand" Margin="-70, 0, 0, 40" Click="BtnEncode_Click"/>
         <Button x:Name="Btn_Decode" Style="{StaticResource ButtonPadunlockStyle}" Cursor="Hand" Margin="70, 0, 0, 40" Click="BtnDecode_Click"/>
+        <Button x:Name="Btn_Add" Style="{StaticResource ButtonAddStyle}" Cursor="Hand" Margin="0, 0, 0, 0" Click="BtnAdd_Click"/>
     </Grid>
 </Window>

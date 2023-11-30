@@ -23,5 +23,15 @@ namespace Crypto.Pages
         {
             InitializeComponent();
         }
+
+        public void BtnClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        public void BtnSave_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

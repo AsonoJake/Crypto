@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Crypto.Pages"
         mc:Ignorable="d"
-        Title="homofonSetup" Height="400" Width="320" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="Transparent" MouseDown="Window_MouseDown">
+        Title="homofonSetup" Height="800" Width="1000" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="Transparent">
     <Grid>
         <Border CornerRadius="20" BorderThickness="2" BorderBrush="#2596BE" Opacity="0.95">
             <Border.Background>
@@ -15,7 +15,7 @@
                     <GradientStop Color="#FF7272FF" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
-            <Label Content="Ustaw bibloteki szyfru" Margin="8,34,8,315" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label Content="Ustaw bibloteki szyfru" Margin="100,30,100,720" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         </Border>
 
         <Grid>
@@ -28,7 +28,55 @@
                 <Button x:Name="BtnClose" Style="{StaticResource ButtonCloseStyle}" Cursor="Hand" Click="BtnClose_Click"/>
             </StackPanel>
         </Grid>
-        
-        <Button x:Name="BtnSend" Style="{StaticResource ButtonPadlockStyle}" Cursor="Hand" Margin="0, 0, 0, 40" Click="BtnSend_Click"/>
+        <Grid>
+            <TextBox x:Name="zbiorA" TextWrapping="Wrap" Text="Wpisz zbiór A" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+    ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="20,100,820,659"/>
+            <TextBox x:Name="zbiorA2" TextWrapping="Wrap" Text="Wpisz zbiór Ą" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+    ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="220,100,620,659"/>
+            <TextBox x:Name="zbiorB" TextWrapping="Wrap" Text="Wpisz zbiór B" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+    ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="420,100,420,659"/>
+            <TextBox x:Name="zbiorC" TextWrapping="Wrap" Text="Wpisz zbiór C" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+    ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="620,100,220,659"/>
+            <TextBox x:Name="zbiorC2" TextWrapping="Wrap" Text="Wpisz zbiór Ć" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+    ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="820,100,20,659"/>
+            <TextBox x:Name="zbiorD" TextWrapping="Wrap" Text="Wpisz zbiór D" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="20,190,820,569"/>
+            <TextBox x:Name="zbiorE" TextWrapping="Wrap" Text="Wpisz zbiór E" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="220,190,620,569"/>
+            <TextBox x:Name="zbiorE2" TextWrapping="Wrap" Text="Wpisz zbiór Ę" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="420,190,420,569"/>
+            <TextBox x:Name="zbiorF" TextWrapping="Wrap" Text="Wpisz zbiór F" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="620,190,220,569"/>
+            <TextBox x:Name="zbiorG" TextWrapping="Wrap" Text="Wpisz zbiór G" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="820,190,20,569"/>
+            <TextBox x:Name="zbiorH" TextWrapping="Wrap" Text="Wpisz zbiór H" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="20,280,820,479"/>
+            <TextBox x:Name="zbiorI" TextWrapping="Wrap" Text="Wpisz zbiór I" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="220,280,620,479"/>
+            <TextBox x:Name="zbiorJ" TextWrapping="Wrap" Text="Wpisz zbiór J" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="420,280,420,479"/>
+            <TextBox x:Name="zbiorK" TextWrapping="Wrap" Text="Wpisz zbiór K" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="620,280,220,479"/>
+            <TextBox x:Name="zbiorL" TextWrapping="Wrap" Text="Wpisz zbiór L" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="820,280,20,479"/>
+            <TextBox x:Name="zbiorL2" TextWrapping="Wrap" Text="Wpisz zbiór Ł" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="20,370,820,389"/>
+            <TextBox x:Name="zbiorM" TextWrapping="Wrap" Text="Wpisz zbiór M" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="220,370,620,389"/>
+            <TextBox x:Name="zbiorN" TextWrapping="Wrap" Text="Wpisz zbiór N" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="420,370,420,389"/>
+            <TextBox x:Name="zbiorN2" TextWrapping="Wrap" Text="Wpisz zbiór Ń" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="620,370,220,389"/>
+            <TextBox x:Name="zbiorO" TextWrapping="Wrap" Text="Wpisz zbiór O" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="820,370,20,389"/>
+            <TextBox x:Name="zbiorO2" TextWrapping="Wrap" Text="Wpisz zbiór Ó" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="20,460,820,299"/>
+            <TextBox x:Name="zbiorP" TextWrapping="Wrap" Text="Wpisz zbiór P" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="20,550,820,209"/>
+            <TextBox x:Name="zeaabiorA" TextWrapping="Wrap" Text="Wpisz zbiór A" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="20,640,820,119"/>
+        </Grid>
+
+        <Button x:Name="BtnSave" Style="{StaticResource ButtonSaveStyle}" Cursor="Hand" Margin="0, 0, 0, 40" Click="BtnSave_Click"/>
     </Grid>
 </Window>

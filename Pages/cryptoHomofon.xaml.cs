@@ -23,5 +23,37 @@ namespace Crypto.Pages
         {
             InitializeComponent();
         }
+
+        public void BtnClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
+
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            homofonSetup setup = new homofonSetup();
+            setup.Show();
+        }
+
+        private void BtnEncode_Click(object sender, RoutedEventArgs e)
+        {
+            string tekst = kod_jawny.Text.ToLower().Replace(".", "").Replace(",", "").Replace("!", "").Replace("?", "");
+            
+            popUp popup = new popUp("Homofon");
+            popup.ShowDialog();
+        }
+
+        private void BtnDecode_Click(object sender, RoutedEventArgs e)
+        {
+            string tekst = kod_jawny.Text.ToLower().Replace(".", "").Replace(",", "").Replace("!", "").Replace("?", "");
+            
+            popUp popup = new popUp("Homofon");
+            popup.ShowDialog();
+        }
     }
 }
