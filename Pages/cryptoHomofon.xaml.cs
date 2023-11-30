@@ -19,6 +19,8 @@ namespace Crypto.Pages
     /// </summary>
     public partial class cryptoHomofon : Window
     {
+        string zbioryTekst = "";
+
         public cryptoHomofon()
         {
             InitializeComponent();
@@ -37,12 +39,15 @@ namespace Crypto.Pages
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
             homofonSetup setup = new homofonSetup();
-            setup.Show();
+            if (setup.ShowDialog() == true)
+            {
+                zbioryTekst = setup.Zbiory;
+            }
         }
 
         private void BtnEncode_Click(object sender, RoutedEventArgs e)
         {
-            string tekst = kod_jawny.Text.ToLower().Replace(".", "").Replace(",", "").Replace("!", "").Replace("?", "");
+            string tekst = zbioryTekst;
             
             popUp popup = new popUp("Homofon");
             popup.ShowDialog();
