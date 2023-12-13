@@ -20,6 +20,7 @@ namespace Crypto.Pages
     public partial class cryptoHomofon : Window
     {
         string zbioryTekst = "";
+        public static string wynikKodu = "";
 
         public cryptoHomofon()
         {
@@ -39,7 +40,7 @@ namespace Crypto.Pages
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
             homofonSetup setup = new homofonSetup();
-            if (setup.ShowDialog() == true)
+            if (setup.ShowDialog() == false)
             {
                 zbioryTekst = setup.Zbiory;
             }
@@ -47,8 +48,9 @@ namespace Crypto.Pages
 
         private void BtnEncode_Click(object sender, RoutedEventArgs e)
         {
-            string tekst = zbioryTekst;
-            
+
+            string tekst = kod_jawny.Text.ToLower().Replace(".", "").Replace(",", "").Replace("!", "").Replace("?", "");
+            wynikKodu = HomofonEn(tekst, zbioryTekst);
             popUp popup = new popUp("Homofon");
             popup.ShowDialog();
         }
@@ -59,6 +61,50 @@ namespace Crypto.Pages
             
             popUp popup = new popUp("Homofon");
             popup.ShowDialog();
+        }
+
+        static string HomofonEn(string napis, string zbiory)
+        {
+            Random rand = new Random();
+            string wynik = "";
+            Dictionary<char, string[]> zbioryAlfabet = new Dictionary<char, string[]>();
+            string[] stringArray = zbiory.Split(';');
+            ///List<string> adjustedStringArray = new List<string>();
+            foreach (var str in stringArray)
+            {
+                if (str.Contains(','))
+                {
+                    adjustedStringArray.AddRange(str.Split(','));
+                }
+                else
+                {
+                    adjustedStringArray.Add(str);
+                }
+            }
+
+            char[] litery = "aąbcćdeęfghijklłmnńoópqrsśtuvwyzźż".ToCharArray();
+            for (int i = 0; i < litery.Length && i < adjustedStringArray.Count; i++)
+            {
+                string value = adjustedStringArray[i];
+                if (value.Contains(','))
+                {
+                    zbioryAlfabet.Add(litery[i], value.Split(','));
+
+                }
+                else
+                {
+                    zbioryAlfabet.Add(litery[i], new string[] { value });
+                }
+            }
+
+            foreach (char c in napis.Replace(" ",""))
+            {
+                string[] possibleValues = zbioryAlfabet[c];
+                int index = rand.Next(0, possibleValues.Length);
+                wynik += possibleValues[index] + " ";
+            }
+
+            return wynik;
         }
     }
 }

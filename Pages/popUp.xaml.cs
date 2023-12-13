@@ -30,6 +30,9 @@ namespace Crypto.Pages
                 case "Polibiusz":
                     wynikPopUp.Text = cryptoPolibiusz.wynikKodu;
                     break;
+                case "Homofon":
+                    wynikPopUp.Text = cryptoHomofon.wynikKodu;
+                    break;
             }
         }
 

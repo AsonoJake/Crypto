@@ -19,7 +19,7 @@ namespace Crypto.Pages
     /// </summary>
     public partial class homofonSetup : Window
     {
-        string zbiory;
+        string zbiory = "";
         public string Zbiory
         {
             get { return zbiory; } 
