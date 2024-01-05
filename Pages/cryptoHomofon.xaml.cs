@@ -58,7 +58,7 @@ namespace Crypto.Pages
         private void BtnDecode_Click(object sender, RoutedEventArgs e)
         {
             string tekst = kod_jawny.Text.ToLower().Replace(".", "").Replace(",", "").Replace("!", "").Replace("?", "");
-            
+            wynikKodu = HomofonDe(tekst, zbioryTekst);
             popUp popup = new popUp("Homofon");
             popup.ShowDialog();
         }
@@ -69,7 +69,57 @@ namespace Crypto.Pages
             string wynik = "";
             Dictionary<char, string[]> zbioryAlfabet = new Dictionary<char, string[]>();
             string[] stringArray = zbiory.Split(';');
-            ///List<string> adjustedStringArray = new List<string>();
+            List<string> adjustedStringArray = new List<string>(); // Changed to List<string>
+
+            foreach (var str in stringArray)
+            {
+                if (str.Contains(','))
+                {
+                    adjustedStringArray.AddRange(str.Split(',')); // Changed to Split(',')
+                }
+                else
+                {
+                    adjustedStringArray.Add(str);
+                }
+            }
+
+            char[] litery = "aąbcćdeęfghijklłmnńoópqrsśtuvwyzźż".ToCharArray();
+            for (int i = 0; i < litery.Length && i < adjustedStringArray.Count; i++)
+            {
+                string value = adjustedStringArray[i];
+                if (value.Contains(","))
+                {
+                    zbioryAlfabet.Add(litery[i], value.Split(','));
+                }
+                else
+                {
+                    zbioryAlfabet.Add(litery[i], new string[] { value });
+                }
+            }
+
+            foreach (char c in napis.Replace(" ", ""))
+            {
+                if (zbioryAlfabet.ContainsKey(c))
+                {
+                    string[] possibleValues = zbioryAlfabet[c];
+                    int index = rand.Next(0, possibleValues.Length);
+                    wynik += possibleValues[index] + " ";
+                }
+                else
+                {
+                    wynik += c + " ";
+                }
+            }
+
+            return wynik;
+        }
+
+        static string HomofonDe(string encodedText, string zbiory)
+        {
+            Dictionary<char, string[]> zbioryAlfabet = new Dictionary<char, string[]>();
+            string[] stringArray = zbiory.Split(';');
+            List<string> adjustedStringArray = new List<string>();
+
             foreach (var str in stringArray)
             {
                 if (str.Contains(','))
@@ -86,10 +136,9 @@ namespace Crypto.Pages
             for (int i = 0; i < litery.Length && i < adjustedStringArray.Count; i++)
             {
                 string value = adjustedStringArray[i];
-                if (value.Contains(','))
+                if (value.Contains(","))
                 {
                     zbioryAlfabet.Add(litery[i], value.Split(','));
-
                 }
                 else
                 {
@@ -97,14 +146,28 @@ namespace Crypto.Pages
                 }
             }
 
-            foreach (char c in napis.Replace(" ",""))
+            string[] encodedArray = encodedText.Split(' ');
+            string decodedText = "";
+
+            foreach (string enc in encodedArray)
             {
-                string[] possibleValues = zbioryAlfabet[c];
-                int index = rand.Next(0, possibleValues.Length);
-                wynik += possibleValues[index] + " ";
+                bool found = false;
+                foreach (var kvp in zbioryAlfabet)
+                {
+                    if (kvp.Value.Contains(enc))
+                    {
+                        decodedText += kvp.Key;
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found)
+                {
+                    decodedText += enc;
+                }
             }
 
-            return wynik;
+            return decodedText;
         }
     }
 }
